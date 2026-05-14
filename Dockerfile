@@ -13,7 +13,7 @@ COPY package*.json ./
 
 # npm ci es más estricto que npm install: usa package-lock.json exacto,
 # más reproducible y seguro para CI/CD.
-RUN npm ci --only=production
+RUN npm install --only=production
 
 # ── STAGE 2: imagen final de ejecución ────────────────────────────────────────
 # Partimos de la misma base limpia. El resultado final NO incluye
