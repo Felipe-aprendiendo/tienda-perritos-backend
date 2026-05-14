@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  backend:
+    image: 850656380173.dkr.ecr.us-east-1.amazonaws.com/tienda-perritos-backend:latest
+    container_name: tienda-backend
+    restart: unless-stopped
+    environment:
+      PORT: 3001
+      DB_HOST: 10.0.132.178
+      DB_USER: alumno
+      DB_PASSWORD: alumno123
+      DB_NAME: tienda_perritos
+      DB_PORT: 3306
+    ports:
+      - "3001:3001"
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
